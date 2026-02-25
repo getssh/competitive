@@ -3,9 +3,8 @@ class Solution:
         size = len(heights)
 
         for i in range(size):
-            j = i + 1
-            for j in range(size):
-                if heights[i] > heights[j]:
+            for j in range(i+1, size):
+                if (heights[i] < heights[j]):
                     heights[i], heights[j] = heights[j], heights[i]
                     names[i], names[j] = names[j], names[i]
         
