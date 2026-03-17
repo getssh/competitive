@@ -5,13 +5,15 @@ class Solution:
 
         for i in range(len(s)):
             if s[i] in freq:
-                freq[s[i]].append(s[i])
+                freq[s[i]] += 1
             else:
-                freq[s[i]] = [s[i]]
+                freq[s[i]] = 1
         
-        str_arr = list(sorted(freq.values(), key=len, reverse=True))
+        # str_arr = list(sorted(freq.values(), key=len, reverse=True))
+        sorted_chars = list(sorted(freq.items(), key=lambda x: x[1], reverse=True))
 
-        for st in str_arr:
-            sort_str += "".join(st)
+        print(sorted_chars)
+        for st in sorted_chars:
+            sort_str += st[0] * st[1]
 
         return sort_str
