@@ -34,7 +34,7 @@ class Solution:
                     chars[left+3] = s[2]
                     left += 4
                     group_num = 1
-                elif group_num > 1000:
+                elif group_num >= 1000:
                     s = str(group_num)
                     chars[left] = chars[right-1]
                     chars[left+1] = s[0]
