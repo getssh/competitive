@@ -6,6 +6,9 @@ class Solution:
         m = len(p)
         n = len(s)
         res = []
+        
+        if m > n: 
+            return []
 
         for i in range(m):
             checker[p[i]] = checker.get(p[i], 0) + 1
