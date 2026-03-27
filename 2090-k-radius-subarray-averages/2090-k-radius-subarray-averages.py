@@ -9,10 +9,10 @@ class Solution:
         
         current_window_sum = sum(nums[:window_size])
         
-        res[k] = current_window_sum 
+        res[k] = current_window_sum // window_size
         
         for i in range(k + 1, n - k):
             current_window_sum = current_window_sum - nums[i - k - 1] + nums[i + k]
-            res[i] = current_window_sum
+            res[i] = current_window_sum // window_size
             
         return res
