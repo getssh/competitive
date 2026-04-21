@@ -24,10 +24,21 @@ class Solution:
         i = idx
         j = idx
 
-        while nums[i-1] == target and i >= 0:
-            i -= 1
+        if i == 0:
+            i = 0
+        else:
+            while nums[i-1] == target and i >= 0:
+                i -= 1
         
-        while nums[j+1] == target and j < len(nums):
-            j += 1
+        if j == len(nums) - 1:
+            j = idx
+        else:
+            while nums[j+1] == target and j < len(nums):
+                j += 1
+        
+        if i < 0:
+            i = 0
+        if j > len(nums) - 1:
+            j = len(nums) - 1
         
         return [i, j]
